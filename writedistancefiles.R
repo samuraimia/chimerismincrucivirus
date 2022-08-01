@@ -23,14 +23,13 @@ capsid$Species.1 <- trimws(capsid$Species.1, whitespace = ' - .*')
 capsid$Species.2 <- trimws(capsid$Species.2, whitespace = ' - .*')
 distances <- read.csv("emptydistances - Sheet1 (1).csv", header = TRUE, sep=',')
 
-# a<- 1
 b<- 1
 i = 1
 x = 1
 # 
 # 
 
-# while (a < nrow(rep))
+
 foreach(a= 1:nrow(rep), .combine=rbind) %do%
   {
     while (b < nrow(capsid))
@@ -50,7 +49,6 @@ foreach(a= 1:nrow(rep), .combine=rbind) %do%
       }
       b = b+1
     }
-    #   a = a+1
     b=1
   }
 
