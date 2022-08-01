@@ -1,4 +1,4 @@
-
+#importing packages
 library(stats4)
 library(stats)
 library(graphics)
@@ -21,7 +21,7 @@ library(coRdon)
 library(seqinr)
 
 
-
+#file must be inside the sequences folder within seqinr
 rcds <- read.fasta(file = system.file("sequences/22CPs.fasta", package = "seqinr"))[[1]]
 uco( rcds, index = "freq")
 uco( rcds, index = "rscu")
