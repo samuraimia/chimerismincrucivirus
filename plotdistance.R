@@ -89,6 +89,35 @@ abline(lm(capsid.distance ~ as.numeric(as.character(rep.distance)),data=Circo),c
         col=c("orange1" ,"turquoise", "red", "plum", "tan4", "gray70", "violetred3", "navy"), pch = 20, cex=1)
 
 
+
+b<- 1
+i = 1
+x = 1
+
+
+
+foreach(a= 1:nrow(rep), .combine=rbind) %do%
+  {
+    while (b < nrow(capsid))
+    {
+      if(rep$Species.1[a] == capsid$Species.1[b] || rep$Species.1[a] == capsid$Species.2[b])
+      {
+        if(rep$Species.2[a] == capsid$Species.1[b] || rep$Species.2[a] == capsid$Species.2[b])
+        {
+          
+          distances$rep.distance[i] <- rep$Dist[a]
+          i = i+1
+          distances$capsid.distance[x] <- capsid$Dist[b]
+          x = x+1
+        }
+        
+      }
+      b = b+1
+    }
+
+    b=1
+  }
+
 plot(distances$rep.distance, distances$capsid.distance, xlab="Distance between replication-associated genes", ylab="Distance between capsid genes", pch = 20, col="orange1")
 
 
