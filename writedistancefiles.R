@@ -8,7 +8,7 @@ library(datasets)
 library(tidyverse)
 
 ncores=detectCores()
-c1=makeCluster(7)
+c1=makeCluster(7) #change this number depending on how many CPU cores the computer has
 registerDoParallel(c1)
 getwd()
 
