@@ -53,3 +53,9 @@ foreach(a= 1:nrow(rep), .combine=rbind) %do%
   }
 
 
+Tombus = read.csv("Tombusdistances.csv", header = TRUE, sep=',')
+Tombus<-Tombus[-c(873:61212),]
+Tombus$X= NULL
+write.csv(distances,"C:\\Users\\ckraj\\Downloads\\Rstudiostuff\\Tombusdistancesmodified.csv", row.names = FALSE)
+
+
